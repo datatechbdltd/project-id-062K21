@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\StaticOption;
+use App\Http\Controllers\Controller;
+use App\Page;
 use Illuminate\Http\Request;
 
-class StaticOptionController extends Controller
+class PageController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class StaticOptionController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\StaticOption  $staticOption
+     * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function show(StaticOption $staticOption)
+    public function show(Page $page)
     {
         //
     }
@@ -52,10 +53,10 @@ class StaticOptionController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\StaticOption  $staticOption
+     * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function edit(StaticOption $staticOption)
+    public function edit(Page $page)
     {
         //
     }
@@ -64,10 +65,10 @@ class StaticOptionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\StaticOption  $staticOption
+     * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, StaticOption $staticOption)
+    public function update(Request $request, Page $page)
     {
         //
     }
@@ -75,10 +76,10 @@ class StaticOptionController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\StaticOption  $staticOption
+     * @param  \App\Page  $page
      * @return \Illuminate\Http\Response
      */
-    public function destroy(StaticOption $staticOption)
+    public function destroy(Page $page)
     {
         //
     }

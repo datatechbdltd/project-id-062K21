@@ -1,11 +1,12 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Language;
+use App\Http\Controllers\Controller;
+use App\StaticOption;
 use Illuminate\Http\Request;
 
-class LanguageController extends Controller
+class StaticOptionController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +42,10 @@ class LanguageController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Language  $language
+     * @param  \App\StaticOption  $staticOption
      * @return \Illuminate\Http\Response
      */
-    public function show(Language $language)
+    public function show(StaticOption $staticOption)
     {
         //
     }
@@ -52,10 +53,10 @@ class LanguageController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Language  $language
+     * @param  \App\StaticOption  $staticOption
      * @return \Illuminate\Http\Response
      */
-    public function edit(Language $language)
+    public function edit(StaticOption $staticOption)
     {
         //
     }
@@ -64,10 +65,10 @@ class LanguageController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Language  $language
+     * @param  \App\StaticOption  $staticOption
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Language $language)
+    public function update(Request $request, StaticOption $staticOption)
     {
         //
     }
@@ -75,10 +76,10 @@ class LanguageController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Language  $language
+     * @param  \App\StaticOption  $staticOption
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Language $language)
+    public function destroy(StaticOption $staticOption)
     {
         //
     }

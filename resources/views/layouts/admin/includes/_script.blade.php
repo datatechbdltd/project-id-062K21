@@ -13,4 +13,7 @@
 <!--begin::Page Scripts(used by this page)-->
 <script src="{{asset('assets/admin/js/pages/widgets.js')}}"></script>
 <!--end::Page Scripts-->
+<!--begin::sweetalert-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.0/sweetalert.min.js"></script>
+<!--end::sweetalert-->
 @include('sweetalert::alert')
