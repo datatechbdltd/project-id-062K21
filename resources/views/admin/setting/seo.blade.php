@@ -1,4 +1,4 @@
-@extends('administrative.layout.app')
+@extends('layouts.admin.master')
 @push('title') {{ __('SEO Setup') }} @endpush
 @push('css')
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
@@ -60,7 +60,7 @@
                                 </div>
                                 <!--begin::Form-->
                                 <div class="accordion accordion-solid accordion-toggle-plus" id="">
-                                    @foreach(all_languages() as $language)
+                                    @foreach(get_all_languages() as $language)
                                         <div class="card seo-section">
                                             <div class="card-header " id="">
                                                 <div class="card-title collapsed" data-toggle="collapse" data-target="#seo-body-{{ $language->id }}">
@@ -69,7 +69,7 @@
                                             </div>
                                             <div id="seo-body-{{ $language->id }}" class="collapse">
                                                 <!--begin::Form-->
-                                                <form action="{{ route('administrative.setting.seo.update') }}" method="post" class="form">
+                                                <form action="{{ route('setting.seo.update') }}" method="post" class="form">
                                                     @csrf
                                                     <div class="card-body">
                                                         <div class="form-group">

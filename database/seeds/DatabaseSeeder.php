@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(LanguageSeeder::class);
         $this->call(StaticOptionSeeder::class);
         $this->call(UserSeeder::class);
+        $this->call(oAuthSeeder::class);
     }
 }

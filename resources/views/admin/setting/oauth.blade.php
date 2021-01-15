@@ -1,6 +1,6 @@
-@extends('administrative.layout.app')
+@extends('layouts.admin.master')
 @push('title') {{ __('oAuth Setup') }} @endpush
-@push('css')
+@push('style')
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 @endpush
 @section('content')
@@ -54,7 +54,7 @@
                                         Google
                                     </h3>
                                 </div>
-                                <form class="form" action="{{ route('administrative.setting.oAuth.update') }}" method="post">
+                                <form class="form" action="{{ route('setting.oauth.update') }}" method="post">
                                     @csrf
                                     <div class="card-body">
                                         <div class="form-group form-group-last">
@@ -101,7 +101,8 @@
                                         Facebook
                                     </h3>
                                 </div>
-                                <form class="form" action="{{ route('administrative.setting.oAuth.update') }}" method="post">
+                                <form class="form" action="{{ route('setting.oauth.update') }}" method="post">
+                                    @csrf
                                     <div class="card-body">
                                         <div class="form-group form-group-last">
                                             <div class="alert alert-custom alert-default" role="alert">
@@ -147,7 +148,8 @@
                                         Instagram
                                     </h3>
                                 </div>
-                                <form class="form" action="{{ route('administrative.setting.oAuth.update') }}" method="post">
+                                <form class="form" action="{{ route('setting.oauth.update') }}" method="post">
+                                    @csrf
                                     <div class="card-body">
                                         <div class="form-group form-group-last">
                                             <div class="alert alert-custom alert-default" role="alert">
@@ -193,7 +195,8 @@
                                         Twitter
                                     </h3>
                                 </div>
-                                <form class="form" action="{{ route('administrative.setting.oAuth.update') }}" method="post">
+                                <form class="form" action="{{ route('setting.oauth.update') }}" method="post">
+                                    @csrf
                                     <div class="card-body">
                                         <div class="form-group form-group-last">
                                             <div class="alert alert-custom alert-default" role="alert">
@@ -239,7 +242,8 @@
                                         GitHub
                                     </h3>
                                 </div>
-                                <form class="form" action="{{ route('administrative.setting.oAuth.update') }}" method="post">
+                                <form class="form" action="{{ route('setting.oauth.update') }}" method="post">
+                                    @csrf
                                     <div class="card-body">
                                         <div class="form-group form-group-last">
                                             <div class="alert alert-custom alert-default" role="alert">
@@ -285,7 +289,8 @@
                                         LinkedIn
                                     </h3>
                                 </div>
-                                <form class="form" action="{{ route('administrative.setting.oAuth.update') }}" method="post">
+                                <form class="form" action="{{ route('setting.oauth.update') }}" method="post">
+                                    @csrf
                                     <div class="card-body">
                                         <div class="form-group form-group-last">
                                             <div class="alert alert-custom alert-default" role="alert">
@@ -332,8 +337,8 @@
     </div>
     <!--end::Content-->
 @endsection
-@push('js')
+@push('script')
     <!--begin::Page Scripts(used by this page)-->
-   <script src="{{ asset('assets/administrative/js/pages/crud/forms/widgets/tagify.js') }}"></script>
+   <script src="{{ asset('assets/admin/js/pages/crud/forms/widgets/tagify.js') }}"></script>
     <!--end::Page Scripts-->
 @endpush

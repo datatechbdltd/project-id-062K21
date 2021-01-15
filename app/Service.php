@@ -9,7 +9,7 @@ class Service extends Model
     protected $fillable = [
         'adder_id',
         'updater_id',
-        'language_id',
+        'language_code',
         'name',
         'slug',
         'icon',

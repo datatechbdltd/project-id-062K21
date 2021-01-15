@@ -17,7 +17,7 @@ class CreateServicesTable extends Migration
             $table->id();
             $table->foreignId('adder_id');
             $table->foreignId('updater_id')->nullable();
-            $table->foreignId('language_id');
+            $table->foreignId('language_code');
             $table->string('name')->nullable();
             $table->string('slug');
             $table->string('icon')->nullable();

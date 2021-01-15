@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,6 +18,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Auth::routes();
+
 Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware' => ['auth']], function (){
     Route::get('dashboard', 'DashboardController@dashboard')->name('admin.dashboard');
     Route::resource('user', 'UserController');
@@ -26,31 +29,24 @@ Route::group(['prefix'=>'admin', 'namespace'=>'Admin', 'middleware' => ['auth']]
     Route::group(['prefix'=>'application'], function (){
         Route::group(['prefix'=>'setting', 'as' => 'setting.'], function (){
             Route::resource('language', 'LanguageController');
-            Route::resource('mail', 'MailController');
-            //Route::resource('mail', 'MailController');
-            Route::resource('identity', 'MailController');
-            Route::resource('contact', 'MailController');
-            Route::resource('seo', 'MailController');
-            Route::resource('oAuth', 'MailController');
-
-//            Route::get('/identity', 'SettingController@identity')->name('identity');
-//            Route::post('/identity/image', 'SettingController@updateIdentityImage')->name('identity_image.update');
-//            Route::post('/identity/color', 'SettingController@updateIdentityColor')->name('identity_color.update');
-//
-//            Route::get('/contact', 'SettingController@contact')->name('contact');
-//            Route::post('/contact', 'SettingController@updateContact')->name('contact.update');
-//
-//            Route::get('/seo', 'SettingController@seo')->name('seo');
-//            Route::post('/seo', 'SettingController@updateSeo')->name('seo.update');
-//
-//            Route::get('/o-auth', 'SettingController@oAuth')->name('oAuth');
-//            Route::post('/o-auth', 'SettingController@updateOAuth')->name('oAuth.update');
+            Route::get('identity', 'SettingController@identity')->name('identity.index');
+            Route::post('identity/image', 'SettingController@updateIdentityImage')->name('identity.image.update');
+            Route::post('identity/color', 'SettingController@updateIdentityColor')->name('identity.color.update');
+            Route::get('contact', 'SettingController@contact')->name('contact.index');
+            Route::post('contact', 'SettingController@updateContact')->name('contact.update');
+            Route::get('seo', 'SettingController@seo')->name('seo.index');
+            Route::post('seo', 'SettingController@updateSeo')->name('seo.update');
+            Route::get('oAuth', 'SettingController@oauth')->name('oauth.index');
+            Route::post('oAuth', 'SettingController@updateOAuth')->name('oauth.update');
+            Route::get('smtp', 'SettingController@smtp')->name('smtp.index');
+            Route::post('smtp', 'SettingController@updateSmtp')->name('smtp.update');
+            Route::post('smtp/test-mail', 'SettingController@testSmtpMail')->name('smtp.test');
         });
     });
 });
 
 
-Auth::routes();
+
 
 Route::get('/home', function (){
     return redirect()->route('admin.dashboard');

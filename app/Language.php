@@ -6,9 +6,17 @@ use Illuminate\Database\Eloquent\Model;
 
 class Language extends Model
 {
-    protected $fillable = [
-        'code',
+    protected $fillable =[
+        'status',
         'name',
-        'flag'
+        'code',
+        'flag',
+        'alignment',
+        'is_default',
     ];
+
+    //Application seo
+    public function application_seo(){
+        return $this->hasOne(ApplicationSeo::class,'language_code','code');
+    }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateLanguagesTable extends Migration
+class CreateOAuthsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,14 @@ class CreateLanguagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('languages', function (Blueprint $table) {
+        Schema::create('o_auths', function (Blueprint $table) {
             $table->id();
             $table->boolean('status')->default(false);
-            $table->string('name')->nullable();
-            $table->string('code')->unique();
-            $table->string('flag')->nullable();
-            $table->string('alignment')->default('ltr');
-            $table->boolean('is_default')->default(false);
+            $table->string('name');
+            $table->string('icon')->nullable();
+            $table->string('client_id')->nullable();
+            $table->string('secret_key')->nullable();
+            $table->integer('login_counter')->default(0);
             $table->timestamps();
         });
     }
@@ -32,6 +32,6 @@ class CreateLanguagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('languages');
+        Schema::dropIfExists('o_auths');
     }
 }

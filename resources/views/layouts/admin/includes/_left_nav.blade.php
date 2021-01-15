@@ -262,7 +262,7 @@
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
                             <li class="menu-item @if(Request::is('*/smtp')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ route('setting.mail.index') }}" class="menu-link">
+                                <a href="{{ route('setting.smtp.index') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>
@@ -323,7 +323,7 @@
                         <i class="menu-arrow"></i>
                         <ul class="menu-subnav">
                             <li class="menu-item @if(Request::is('*/o-auth')) menu-item-active @endif" aria-haspopup="true">
-                                <a href="{{ route('setting.oAuth.index') }}" class="menu-link">
+                                <a href="{{ route('setting.oauth.index') }}" class="menu-link">
                                     <i class="menu-bullet menu-bullet-dot">
                                         <span></span>
                                     </i>

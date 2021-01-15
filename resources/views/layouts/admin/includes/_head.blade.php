@@ -1,9 +1,13 @@
 <base href="">
 <meta charset="utf-8" />
 <title>@stack('title') | {{ config('app.name') }}</title>
-<meta name="description" content="datatechbd admin dashboard live demo. Check out all the features of the admin panel. A large number of settings, additional services and widgets." />
+<meta name="author" content="{{ get_content_by_language('application_seo')['author'] ?? 'No author' }}">
+<meta name="description" content="{{ get_content_by_language('application_seo')['description'] ?? 'No description' }}"/>
+<meta property="og:image" content="{{ asset(get_static_option('meta_image')) }}" />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-<link rel="canonical" href="https://datatechbd.com.com/" />
+<!--begin::CSRF-->
+<meta name="csrf-token" content="{{ csrf_token() }}">
+<!--end::CSRF-->
 <!--begin::Fonts-->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
 <!--end::Fonts-->

@@ -1,6 +1,6 @@
-@extends('administrative.layout.app')
+@extends('layouts.admin.master')
 @push('title') {{ __('Contact Setup') }} @endpush
-@push('css')
+@push('style')
     <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
 @endpush
 @section('content')
@@ -59,7 +59,7 @@
                                     </div>
                                 </div>
                                 <!--begin::Form-->
-                                <form action="{{ route('administrative.setting.contact.update') }}" method="post" enctype="multipart/form-data">
+                                <form action="{{ route('setting.contact.update') }}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     {{--Email section--}}
                                     <div class="form-group">
@@ -93,7 +93,7 @@
     </div>
     <!--end::Content-->
 @endsection
-@push('js')
+@push('script')
     <script>
         $(document).ready(function() {
             $('#footer_credit').summernote({

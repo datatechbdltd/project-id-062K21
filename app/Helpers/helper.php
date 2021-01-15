@@ -47,6 +47,10 @@ if (!function_exists('random_code')){
         }
     }
 
+    function get_all_languages(){
+        return Language::all();
+    }
+
     function get_active_languages(){
         return Language::where('status', true)->get();
     }
@@ -72,6 +76,7 @@ if (!function_exists('random_code')){
         return Page::where("status", true)->get();
     }
 
+
     /**
      * @param $table
      * @param $column
@@ -86,7 +91,10 @@ if (!function_exists('random_code')){
         }
     }
 
-
+    function get_all_o_auth()
+    {
+        return \App\oAuth::all();
+    }
 
     function set_env_value(array $values)
     {
@@ -136,16 +144,6 @@ if (!function_exists('random_code')){
         }
     }
 
-    function get_sum_of_pending_transaction(){
-        return \App\Transaction::where('status', null)->count();
-    }
 
-    function get_active_products(){
-        return \App\Product::where('status', true)->get();
-    }
-
-    function get_users(){
-        return \App\User::all();
-    }
 
 }
